@@ -1,28 +1,34 @@
 import React from "react";
 import { FaGaugeHigh, FaMoneyCheck } from "react-icons/fa6";
 import { GiStrong, GiCommercialAirplane } from "react-icons/gi";
+import { convertHTMLToText } from "../../util";
 
-const Main = () => {
+const Main = ({ content }: { content: any[] }) => {
 	return (
-		<main className='w-full md:px-8 px-4 py-10 flex items-center justify-center flex-col' id="about">
+		<main
+			className='w-full md:px-8 px-4 py-10 flex items-center justify-center flex-col'
+			id='about'
+		>
 			<h1 className='text-[#304D30] text-center text-4xl font-bold mb-14'>
 				Why OneShop?
 			</h1>
 			<div className='flex items-center sm:flex-row flex-col sm:space-x-4 sm:mb-6  justify-center sm:w-[80%] w-full'>
 				<div className='sm:w-1/2 w-full mb-4 sm:mb-0 bg-[#EEF0E5] p-6 rounded-lg'>
 					<FaGaugeHigh className='text-3xl mb-4 text-[#304D30]' />
-					<h2 className='text-[#304D30] text-xl font-bold'>Premium Quality</h2>
+					<h2 className='text-[#304D30] text-xl font-bold'>
+						{content[1].header}
+					</h2>
 					<p className='text-[#304D30]'>
-						We use only the finest cotton to create our tees, ensuring they are
-						soft, breathable and durable.
+						{convertHTMLToText(content[1].htmlValue)}
 					</p>
 				</div>
 				<div className='sm:w-1/2 w-full mb-4 sm:mb-0 bg-[#EEF0E5] p-6 rounded-lg'>
 					<GiStrong className='text-3xl mb-4 text-[#304D30]' />
-					<h2 className='text-[#304D30] text-xl font-bold'>Sustainable</h2>
+					<h2 className='text-[#304D30] text-xl font-bold'>
+						{content[2].header}
+					</h2>
 					<p className='text-[#304D30]'>
-						We are committed to using sustainable materials and processes to
-						reduce our environmental impact.
+						{convertHTMLToText(content[2].htmlValue)}
 					</p>
 				</div>
 			</div>
@@ -30,18 +36,20 @@ const Main = () => {
 			<div className='flex items-center sm:flex-row flex-col sm:space-x-4 mb-6 justify-center sm:w-[80%] w-full'>
 				<div className='sm:w-1/2 w-full mb-4 sm:mb-0 bg-[#EEF0E5] p-6 rounded-lg'>
 					<FaMoneyCheck className='text-3xl mb-4 text-[#304D30]' />
-					<h2 className='text-[#304D30] text-xl font-bold'>Affordable</h2>
+					<h2 className='text-[#304D30] text-xl font-bold'>
+						{content[3].header}
+					</h2>
 					<p className='text-[#304D30]'>
-						We believe that everyone should have access to premium quality
-						clothing at affordable prices.
+						{convertHTMLToText(content[3].htmlValue)}
 					</p>
 				</div>
 				<div className='sm:w-1/2 w-full mb-4 sm:mb-0 bg-[#EEF0E5] p-6 rounded-lg'>
 					<GiCommercialAirplane className='text-3xl mb-4 text-[#304D30]' />
-					<h2 className='text-[#304D30] text-xl font-bold'>Free Shipping</h2>
+					<h2 className='text-[#304D30] text-xl font-bold'>
+						{content[4].header}
+					</h2>
 					<p className='text-[#304D30]'>
-						We offer free shipping for orders over $200, so you can shop from
-						anywhere in the world.
+						{convertHTMLToText(content[4].htmlValue)}
 					</p>
 				</div>
 			</div>
